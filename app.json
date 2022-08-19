@@ -1,18 +1,18 @@
 {
-      "name": "RiZoeL X Spam",
-      "description": "MOST POWERFUL + STABLE SPAM USERBOTS",
-      "logo": "https://telegra.ph/file/db194f99e15db50f43c72.jpg",
-      "keywords": [
+    "name": "RIZOELXSPAM HERE.",
+    "description": "MOST POWERFUL + STABLE SPAM USERBOTS",
+    "logo": "https://telegra.ph/file/db194f99e15db50f43c72.jpg",
+    "keywords": [
         "telegram",
         "telethon",
         "telegram-bot",
         "RiZoeLXSpam",
         "SpamBots"
-      ],   
-  "repository": "https://github.com/MrRizoel",
-  "website": "https://github.com/MrRizoel",
-  "success_url": "https://t.me/RiZoeLX",
-      "env": {
+    ],
+    "repository": "https://t.me/TheRiZoeL",
+    "website": "https://t.me/TheRiZoeL",
+    "success_url": "https://t.me/TheRiZoeL",
+    "env": {
              "API_ID": {
         "description": "Fill Api ID Take this value from My.telegram.org",
         "value": "",
@@ -28,6 +28,11 @@
         "value": "",
         "required": true
       },
+     "CMD_HNDLR": {
+            "description": "Custom command handler.",
+            "value": "!",
+            "required": false
+        },
       "BOT_TOKEN": {
         "description": "Telegram Bot Token Get This value from https://t.me/BotFather",
         "value": "",
@@ -81,6 +86,11 @@
        "SUDO_USER": {
             "description": "Sudo users id space by space",
             "value": "",
+            "required": false
+        },
+      "OWNER_ID": {
+            "description": "owner Id",
+            "value": "",
             "required": true
         },
         "HEROKU_API_KEY": {
@@ -94,7 +104,6 @@
           "required": false  
         }
     },
-
   "addons": [
     {
       "plan": "heroku-postgresql",
@@ -103,7 +112,7 @@
       }
     }
   ],
-    "buildpacks": [
+  "buildpacks": [
         {
             "url": "heroku/python"
         }

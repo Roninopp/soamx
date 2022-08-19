@@ -13,10 +13,13 @@
 - [x] ☯︎ ғᴀsᴛ ᴀɴᴅ sᴛᴀʙʟᴇ ☯︎
 - [x] Deploy 10 Bots in One time 🔥
 - [x] Deploy Using Bot Token 
+- [x] Porn Spam | Hang Spam
+- [x] Inline Spam `new`
+
 
 # Deploy on heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MrRizoel/Spambot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TheRiZoeL/SpamBot-deploy)
 
 
 # Support & Updates
@@ -24,6 +27,5 @@
 * [Support Group](https://t.me/DNHcHELL)
 
 # Credits
-* [RiZoeL Creator](https://github.com/MrRizoel)
-* [Ustad-op](https://github.com/Ustad-Op)
+* [RiZoeL](https://github.com/MrRizoel)
 * [Lonami](https://github.com/LonamiWebs/) for [Telethon.](https://github.com/LonamiWebs/Telethon)

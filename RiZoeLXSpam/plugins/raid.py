@@ -6,23 +6,26 @@ import random
 from telethon import events
 from telethon import functions, types
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from .. import Riz, Riz2, Riz3, Riz4, Riz5 , Riz6, Riz7, Riz8, Riz9, Riz10, SUDO_USERS
+from RiZoeLXSpam import Riz, Riz2, Riz3, Riz4, Riz5 , Riz6, Riz7, Riz8, Riz9, Riz10, SUDO_USERS, OWNER_ID
 from resources.data import RAID, REPLYRAID, RiZoeLX
+from RiZoeLXSpam import CMD_HNDLR as hl
+
 
 que = {}
 
-@Riz.on(events.NewMessage(pattern=r"\.raid"))
-@Riz2.on(events.NewMessage(pattern=r"\.raid"))
-@Riz3.on(events.NewMessage(pattern=r"\.raid"))
-@Riz4.on(events.NewMessage(pattern=r"\.raid"))
-@Riz5.on(events.NewMessage(pattern=r"\.raid"))
-@Riz6.on(events.NewMessage(pattern=r"\.raid"))
-@Riz7.on(events.NewMessage(pattern=r"\.raid"))
-@Riz8.on(events.NewMessage(pattern=r"\.raid"))
-@Riz9.on(events.NewMessage(pattern=r"\.raid"))
-@Riz10.on(events.NewMessage(pattern=r"\.raid"))
+
+@Riz.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz2.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz3.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz4.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz5.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz6.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz7.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz8.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz9.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
+@Riz10.on(events.NewMessage(incoming=True, pattern=r"\%sraid(?: |$)(.*)" % hl))
 async def spam(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\n\nCommand:\n\n.raid <count> <Username of User>\n\n.raid <count> <reply to a User>\n\nCount must be a integer."
+    usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗮𝗶𝗱\n\nCommand:\n\n{hl}raid <count> <Username of User>\n\n{hl}raid <count> <reply to a User>\n\nCount must be a integer."
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -34,6 +37,9 @@ async def spam(e):
             g = a.id
             if int(g) in RiZoeLX:
                 text = f"I can't raid on @RiZoeLX's Owner"
+                await e.reply(text, parse_mode=None, link_preview=None )
+            elif int(g) == OWNER_ID:
+                text = f"This guy is a owner Of this Bots."
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This guy is a sudo user."
@@ -54,6 +60,9 @@ async def spam(e):
             g = b.id
             if int(g) in RiZoeLX:
                 text = f"I can't raid on @RiZoeLX's Owner"
+                await e.reply(text, parse_mode=None, link_preview=None )
+            elif int(g) == OWNER_ID:
+                text = f"This guy is a owner Of this Bots."
                 await e.reply(text, parse_mode=None, link_preview=None )
             elif int(g) in SUDO_USERS:
                 text = f"This guy is a sudo user."
@@ -98,19 +107,19 @@ async def _(event):
         )
 
 
-@Riz.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz2.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz3.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz4.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz5.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz6.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz7.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz8.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz9.on(events.NewMessage(pattern=r"\.replyraid"))
-@Riz10.on(events.NewMessage(pattern=r"\.replyraid"))
+@Riz.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz2.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz3.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz4.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz5.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz6.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz7.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz8.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz9.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
+@Riz10.on(events.NewMessage(incoming=True, pattern=r"\%sreplyraid(?: |$)(.*)" % hl))
 async def _(e):
     global que
-    usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.replyraid <Username of User>\n\n.replyraid <reply to a User>."
+    usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n{hl}replyraid <Username of User>\n\n{hl}replyraid <reply to a User>."
     if e.sender_id in SUDO_USERS:
         RiZoeL = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         Rizx = await e.get_reply_message()
@@ -122,6 +131,9 @@ async def _(e):
             if int(user_id) in RiZoeLX:
                 text = f" can't raid on @RiZoeLX's Owner."
                 await e.reply(text, parse_mode=None, link_preview=None )
+            elif int(user_id) == OWNER_ID:
+                text = f"This guy is a owner Of this Bots."            
+                await event.reply(text, parse_mode=None, link_preview=None )
             elif int(user_id) in SUDO_USERS:
                 text = f"This guy is a sudo user."
                 await e.reply(text, parse_mode=None, link_preview=None )
@@ -140,6 +152,9 @@ async def _(e):
             if int(user_id) in RiZoeLX:
                 text = f" can't raid on @RiZoeLX's Owner."
                 await e.reply(text, parse_mode=None, link_preview=None )
+            elif int(user_id) == OWNER_ID:
+                text = f"This guy is a owner Of this Bots."
+                await event.reply(text, parse_mode=None, link_preview=None )
             elif int(user_id) in SUDO_USERS:
                 text = f"This guy is a sudo user."
                 await e.reply(text, parse_mode=None, link_preview=None )
@@ -154,18 +169,18 @@ async def _(e):
             await e.reply(usage)
 
 
-@Riz.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz2.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz3.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz4.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz5.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz6.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz7.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz8.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz9.on(events.NewMessage(pattern=r"\.dreplyraid"))
-@Riz10.on(events.NewMessage(pattern=r"\.dreplyraid"))
+@Riz.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz2.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz3.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz4.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz5.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz6.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz7.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz8.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz9.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
+@Riz10.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
 async def _(e):
-    usage = "𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗮𝗰𝘁𝗶𝘃𝗮𝘁𝗲 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n.dreplyraid <Username of User>\n\n.dreplyraid <reply to a User>"
+    usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗲𝗮𝗰𝘁𝗶𝘃𝗮𝘁𝗲 𝗥𝗲𝗽𝗹𝘆𝗥𝗮𝗶𝗱\n\nCommand:\n\n{hl}dreplyraid <Username of User>\n\n{hl}dreplyraid <reply to a User>"
     global que    
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
@@ -197,3 +212,69 @@ async def _(e):
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
     
+@Riz.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz2.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz3.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz4.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz5.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz6.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz7.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz8.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz9.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+@Riz10.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
+async def _(event):
+   usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = 𝗗𝗘𝗟𝗔𝗬𝗥𝗔𝗜𝗗\n\nCommand:\n\n{hl}delayraid <delay> <count> <Username of User>\n\n{hl}delayraid <delay> <count> <reply to a User>\n\nCount and Sleeptime must be a integer."        
+   if event.sender_id in SUDO_USERS:
+         if event.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
+            return await e.reply(usage, parse_mode=None, link_preview=None )
+         RiZoeL = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)
+         if len(RiZoeL) == 3:
+             user = str(RiZoeL[2])
+             a = await event.client.get_entity(user)
+             e = a.id
+             if int(e) in RiZoeLX:
+                    text = f"I can't raid on @RiZoeLX's Owner"
+                    await event.reply(text, parse_mode=None, link_preview=None )
+             elif int(e) == OWNER_ID:
+                text = f"This guy is a owner Of this Bots."
+                await event.reply(text, parse_mode=None, link_preview=None )
+             elif int(e) in SUDO_USERS:
+                    text = f"This guy is a sudo user."
+                    await event.reply(text, parse_mode=None, link_preview=None )
+             else:
+                 c = a.first_name
+                 username = f"[{c}](tg://user?id={e})"
+                 counter = int(RiZoeL[1])
+                 sleeptimet = sleeptimem = float(RiZoeL[0])
+                 for _ in range(counter):
+                      reply = random.choice(RAID)
+                      caption = f"{username} {reply}"
+                      async with event.client.action(event.chat_id, "typing"):
+                          await event.client.send_message(event.chat_id, caption)
+                          await asyncio.sleep(sleeptimem)
+         elif event.reply_to_msg_id:
+               a = await event.get_reply_message()
+               b = await event.client.get_entity(a.sender_id)
+               e = b.id
+               if int(e) in RiZoeLX:
+                       text = f"I can't raid on @RiZoeLX's Owner"
+                       await event.reply(text, parse_mode=None, link_preview=None )
+               elif int(e) == OWNER_ID:
+                       text = f"This guy is a owner Of this Bots."
+                       await event.reply(text, parse_mode=None, link_preview=None )
+               elif int(e) in SUDO_USERS:
+                       text = f"This guy is a sudo user."
+                       await event.reply(text, parse_mode=None, link_preview=None )
+               else:
+                   c = b.first_name
+                   username = f"[{c}](tg://user?id={e})"
+                   sleeptimet = sleeptimem = float(RiZoeL[0])
+                   counter = int(RiZoeL[1])
+                   for _ in range(counter):
+                        reply = random.choice(RAID)
+                        caption = f"{username} {reply}"
+                        async with event.client.action(event.chat_id, "typing"):
+                             await event.client.send_message(event.chat_id, caption)
+                             await asyncio.sleep(sleeptimem)
+         else:
+            await event.reply(usage)
