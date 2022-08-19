@@ -109,7 +109,7 @@ async def start(event):
                 caption=Rizmsg, 
                 buttons=Riz_Button)       
 
-@Riz7.on(events.NewMessage(pattern="/start"))
+@Riz7.on(events.NewMessage(pattern="/sstart"))
 async def start(event):              
     if event.is_private:
        RizBot = await Riz7.get_me()
