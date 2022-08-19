@@ -14,7 +14,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "please check out to an official branch, and re-start the updater."
 )
 OFFICIAL_UPSTREAM_REPO = "https://github.com/MrRizoel/Spambot"
-BOT_IS_UP_TO_DATE = "**The RiZoeL X Spam** is up-to-date sur."
+BOT_IS_UP_TO_DATE = "**The Ronin X Spam** is up-to-date sur."
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
     "changelog: \n\n{changelog}\n"
@@ -41,7 +41,7 @@ RESTARTING_APP = "re-starting heroku application"
 @Riz10.on(events.NewMessage(pattern=".update"))
 async def restart(e):
     if e.sender_id in SUDO_USERS:
-        text = "__U𝗽𝗱𝗮𝘁𝗶𝗻𝗴..... 𝗬𝗼𝘂𝗿 𝗥𝗶𝗭𝗼𝗲𝗟 𝗫 𝗦𝗽𝗮𝗺 𝗨𝘀𝗲𝗿𝗯𝗼𝘁𝘀__\n𝗧𝘆𝗽𝗲 .ping 𝗔𝗳𝘁𝗲𝗿 5𝗺𝗶𝗻𝘀 𝗧𝗼 𝗰𝗵𝗲𝗰𝗸 𝗜'𝗺 𝗼𝗻 !!"
+        text = "__U𝗽𝗱𝗮𝘁𝗶𝗻𝗴..... 𝗬𝗼𝘂𝗿 Ronin 𝗫 𝗦𝗽𝗮𝗺 𝗨𝘀𝗲𝗿𝗯𝗼𝘁𝘀__\n𝗧𝘆𝗽𝗲 .ping 𝗔𝗳𝘁𝗲𝗿 5𝗺𝗶𝗻𝘀 𝗧𝗼 𝗰𝗵𝗲𝗰𝗸 𝗜'𝗺 𝗼𝗻 !!"
         await e.reply(text, parse_mode=None, link_preview=None)
 
 
@@ -153,7 +153,7 @@ def generate_change_log(git_repo, diff_marker):
 async def deploy_start(Riz, message, refspec, remote):
     await message.edit(RESTARTING_APP)
     await message.edit(
-        "Updated your RiZoeL X Spam successfully sur!!!\n© @RiZoeLX"
+        "Updated your Ronin X Spam successfully sur!!!\n© @DushmanXronin"
     )
     await remote.push(refspec=refspec)
     await Riz.disconnect()
