@@ -19,6 +19,6 @@
 * [Support Group](https://t.me/DNHcHELL)
 
 # Credits
-* [RiZoeL Creator](https://github.com/Roninopp)
+* [Ronin Creator](https://github.com/Roninopp)
 * [Ustad-op](https://github.com/Ustad-Op)
 * [Lonami](https://github.com/LonamiWebs/) for [Telethon.](https://github.com/LonamiWebs/Telethon)
